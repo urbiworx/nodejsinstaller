@@ -8,13 +8,13 @@ touch /usr/local/nodejs$1/server.js
 rm /lib/systemd/system/nodejs$1.service
 touch /lib/systemd/system/nodejs$1.service
 echo "[Unit]" >> /lib/systemd/system/nodejs$1.service
-echo "Description=Job that runs Nodejs{enter}" >> /lib/systemd/system/nodejs$1.service
-echo "Documentation={enter}" >> /lib/systemd/system/nodejs$1.service
+echo "Description=Job that runs Nodejs" >> /lib/systemd/system/nodejs$1.service
+echo "Documentation=" >> /lib/systemd/system/nodejs$1.service
 echo "" >> /lib/systemd/system/nodejs$1.service
 echo "[Service]" >> /lib/systemd/system/nodejs$1.service
 echo "Type=forking" >> /lib/systemd/system/nodejs$1.service
 echo "Environment=HOME=/root" >> /lib/systemd/system/nodejs$1.service
-echo "ExecStart=nodemon /usr/bin/nodeservice$1.sh" >> /lib/systemd/system/nodejs$1.service
+echo "ExecStart=/usr/bin/nodeservice$1.sh" >> /lib/systemd/system/nodejs$1.service
 echo "" >> /lib/systemd/system/nodejs$1.service
 echo "[Install]" >> /lib/systemd/system/nodejs$1.service
 echo "WantedBy=multi-user.target" >> /lib/systemd/system/nodejs$1.service
