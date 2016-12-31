@@ -3,7 +3,9 @@ apt-get install -y nodejs
 apt-get install -y npm
 npm install -g nodemon
 mkdir /usr/local/nodejs$1
+rm /usr/local/nodejs$1/server.js
 touch /usr/local/nodejs$1/server.js
+rm /lib/systemd/system/nodejs$1.service
 touch /lib/systemd/system/nodejs$1.service
 echo "[Unit]" >> /lib/systemd/system/nodejs$1.service
 echo "Description=Job that runs Nodejs{enter}" >> /lib/systemd/system/nodejs$1.service
@@ -16,6 +18,7 @@ echo "ExecStart=nodemon /usr/bin/nodeservice$1.sh" >> /lib/systemd/system/nodejs
 echo "" >> /lib/systemd/system/nodejs$1.service
 echo "[Install]" >> /lib/systemd/system/nodejs$1.service
 echo "WantedBy=multi-user.target" >> /lib/systemd/system/nodejs$1.service
+rm /usr/bin/nodeservice$1.sh
 touch /usr/bin/nodeservice$1.sh
 echo "#!/bin/sh" >> /usr/bin/nodeservice$1.sh
 echo "cd /usr/local/nodejs$1" >> /usr/bin/nodeservice$1.sh
