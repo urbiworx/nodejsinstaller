@@ -1,6 +1,7 @@
 apt-get update && apt-get dist-upgrade -y
 apt-get install -y nodejs
 apt-get install -y npm
+ln -s "$(which nodejs)" /usr/bin/node
 npm install -g nodemon
 mkdir /usr/local/nodejs$1
 rm /usr/local/nodejs$1/server.js
