@@ -22,6 +22,7 @@ rm /usr/bin/nodeservice$1.sh
 touch /usr/bin/nodeservice$1.sh
 echo "#!/bin/sh" >> /usr/bin/nodeservice$1.sh
 echo "cd /usr/local/nodejs$1" >> /usr/bin/nodeservice$1.sh
-echo "nodemon /usr/local/nodejs$1/server.js --watch /usr/local/nodejs$1 >>>> /var/log/nodejs$1.log 2>>&1 &" >> /usr/bin/nodeservice$1.sh
+echo "nodemon /usr/local/nodejs$1/server.js --watch /usr/local/nodejs$1 >> /var/log/nodejs$1.log 2>&1 &" >> /usr/bin/nodeservice$1.sh
 chmod 0777 /usr/bin/nodeservice$1.sh
 systemctl enable nodejs$1.service
+systemctl start nodejs$1.service
