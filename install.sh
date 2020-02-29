@@ -3,7 +3,7 @@ apt-get install -y nodejs
 apt-get install -y npm
 ln -s "$(which nodejs)" /usr/bin/node
 npm install -g forever
-adduser nodeuser$1
+adduser --disabled-password --gecos "" nodeuser$1
 mkdir /usr/local/nodejs$1
 rm /usr/local/nodejs$1/server.js
 touch /usr/local/nodejs$1/server.js
