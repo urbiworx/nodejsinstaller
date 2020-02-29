@@ -25,9 +25,11 @@ rm /usr/bin/nodeservice$1.sh
 touch /usr/bin/nodeservice$1.sh
 echo "#!/bin/sh" >> /usr/bin/nodeservice$1.sh
 echo "cd /usr/local/nodejs$1" >> /usr/bin/nodeservice$1.sh
-echo "forever --watchDirectory /usr/local/nodejs$1 --workingDir /usr/local/nodejs$1 /usr/local/nodejs$1/server.js >> /var/log/nodejs$1.log 2>&1 &" >> /usr/bin/nodeservice$1.sh
+echo "FOREVER_ROOT=/usr/local/nodejs$1/.forever forever --watchDirectory /usr/local/nodejs$1 --workingDir /usr/local/nodejs$1 /usr/local/nodejs$1/server.js >> /var/log/nodejs$1.log 2>&1 &" >> /usr/bin/nodeservice$1.sh
 chmod 0777 /usr/bin/nodeservice$1.sh
 chown -c nodeuser$1 /usr/bin/nodeservice$1.sh
 chmod -R 700 /usr/local/nodejs$1
+chown -R -c nodeuser$1 /usr/local/nodejs$1
+chown -c nodeuser$1 /var/log/nodejs$1.log
 systemctl enable nodejs$1.service
 systemctl start nodejs$1.service
