@@ -1,4 +1,5 @@
 # nodejsinstaller
-The script https://raw.githubusercontent.com/urbiworx/nodejsinstaller/master/install.sh helps to install a node js service (that starts on startup) on ubuntu (or ubuntu compatible) systems. 
-Just run: curl -s https://raw.githubusercontent.com/urbiworx/nodejsinstaller/master/install.sh | bash /dev/stdin test 
-where "test" can be any identifier. Using different identifiers you can create multiple nodejs instances on the same system. If you need more instructions you can find them here: <a href="http://www.urbiworx.de/2017/01/install-nodejs-service-on-ubuntu.html">Install a Nodejs Service on Ubuntu</a>.
+The script https://raw.githubusercontent.com/urbiworx/nodejsinstaller/master/install.sh helps to install a node js service (that starts on startup) on ubuntu (or ubuntu compatible) systems. <br/>
+Just run: <pre>curl -s https://raw.githubusercontent.com/urbiworx/nodejsinstaller/master/install.sh | bash /dev/stdin test </pre><br/>
+where "test" can be any identifier. Using different identifiers you can create multiple nodejs instances on the same system. If you need more instructions you can find them here: <a href="http://www.urbiworx.de/2017/01/install-nodejs-service-on-ubuntu.html">Install a Nodejs Service on Ubuntu</a>.<br/>
+Just run: <pre>curl -s https://raw.githubusercontent.com/urbiworx/nodejsinstaller/master/uninstall.sh | bash /dev/stdin test </pre><br/> to uninstall
